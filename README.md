@@ -1,2 +1,2 @@
 # calculator
-calculator using pyqt5
+calculator in python using pyqt5 for UI

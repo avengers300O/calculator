@@ -1,0 +1,433 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(360, 570)
+        MainWindow.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        MainWindow.setAttribute(QtCore.Qt.WidgetAttribute .WA_TranslucentBackground)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("background-color:black")
+        self.centralwidget.setObjectName("centralwidget")
+        self.centralwidget.setFixedSize(357, 570)
+        
+        #C clear
+        self.bt_clear = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("C"))
+        self.bt_clear.setGeometry(QtCore.QRect(0, 170, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(28)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_clear.setFont(font)
+        self.bt_clear.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(230, 0, 0)")
+        self.bt_clear.setObjectName("bt_clear")
+        # << backspace
+        self.bt_back = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.remove())
+        self.bt_back.setGeometry(QtCore.QRect(90, 170, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_back.setFont(font)
+        self.bt_back.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt_back.setObjectName("bt_back")
+        # divide
+        self.bt_div = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("/"))
+        self.bt_div.setGeometry(QtCore.QRect(270, 170, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_div.setFont(font)
+        self.bt_div.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt_div.setObjectName("bt_div")
+        # modulas
+        self.bt_mod = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("%"))
+        self.bt_mod.setGeometry(QtCore.QRect(180, 170, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_mod.setFont(font)
+        self.bt_mod.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt_mod.setObjectName("bt_mod")
+        # multiple *
+        self.bt_multi = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("*"))
+        self.bt_multi.setGeometry(QtCore.QRect(270, 250, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_multi.setFont(font)
+        self.bt_multi.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt_multi.setObjectName("bt_multi")
+        # eight 8
+        self.bt8 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("8"))
+        self.bt8.setGeometry(QtCore.QRect(90, 250, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt8.setFont(font)
+        self.bt8.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt8.setObjectName("bt8")
+        # nine 9
+        self.bt9 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("9"))
+        self.bt9.setGeometry(QtCore.QRect(180, 250, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt9.setFont(font)
+        self.bt9.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt9.setObjectName("bt9")
+        # seven 7
+        self.bt7 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("7"))
+        self.bt7.setGeometry(QtCore.QRect(0, 250, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt7.setFont(font)
+        self.bt7.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt7.setObjectName("bt7")
+        # subtraction -
+        self.bt_sub = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("-"))
+        self.bt_sub.setGeometry(QtCore.QRect(270, 330, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_sub.setFont(font)
+        self.bt_sub.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt_sub.setObjectName("bt_sub")
+        # one 1
+        self.bt1 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("1"))
+        self.bt1.setGeometry(QtCore.QRect(0, 410, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt1.setFont(font)
+        self.bt1.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt1.setObjectName("bt1")
+        # five 5
+        self.bt5 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("5"))
+        self.bt5.setGeometry(QtCore.QRect(90, 330, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt5.setFont(font)
+        self.bt5.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt5.setObjectName("bt5")
+        # two 2
+        self.bt2 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("2"))
+        self.bt2.setGeometry(QtCore.QRect(90, 410, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt2.setFont(font)
+        self.bt2.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt2.setObjectName("bt2")
+        # addition +
+        self.bt_add = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("+"))
+        self.bt_add.setGeometry(QtCore.QRect(270, 410, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_add.setFont(font)
+        self.bt_add.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt_add.setObjectName("bt_add")
+        #three 3 
+        self.bt3 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("3"))
+        self.bt3.setGeometry(QtCore.QRect(180, 410, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt3.setFont(font)
+        self.bt3.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt3.setObjectName("bt3")
+        #six 6
+        self.bt6 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("6"))
+        self.bt6.setGeometry(QtCore.QRect(180, 330, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt6.setFont(font)
+        self.bt6.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt6.setObjectName("bt6")
+        # four 4
+        self.bt4 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("4"))
+        self.bt4.setGeometry(QtCore.QRect(0, 330, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt4.setFont(font)
+        self.bt4.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt4.setObjectName("bt4")
+        # Bracket ()
+        self.bt_brac = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.bracket())
+        self.bt_brac.setGeometry(QtCore.QRect(180, 490, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_brac.setFont(font)
+        self.bt_brac.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt_brac.setObjectName("bt_brac")
+        # zero 0
+        self.bt0 = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.pressed("0"))
+        self.bt0.setGeometry(QtCore.QRect(90, 490, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt0.setFont(font)
+        self.bt0.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt0.setObjectName("bt0")
+        # equal =
+        self.bt_equal = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.result())
+        self.bt_equal.setGeometry(QtCore.QRect(270, 490, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_equal.setFont(font)
+        self.bt_equal.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(0,230,0)")
+        self.bt_equal.setObjectName("bt_equal")
+        # dot .
+        self.bt_dot = QtWidgets.QPushButton(self.centralwidget,clicked=lambda:self.dot())
+        self.bt_dot.setGeometry(QtCore.QRect(0, 490, 89, 80))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_dot.setFont(font)
+        self.bt_dot.setStyleSheet("background-color:rgb(30,30,30);\n"
+"color:rgb(140,140,140)")
+        self.bt_dot.setObjectName("bt_dot")
+        # Result label
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(5, 40, 350, 121))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(28)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label.setFont(font)
+        self.label.setStyleSheet("background-color:black;\n"
+"color:white")
+        self.label.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label.setObjectName("label")
+        
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setGeometry(QtCore.QRect(0, 0, 361, 31))
+        self.frame.setStyleSheet("background-color:rgb(25,25,25)")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.bt_x = QtWidgets.QPushButton(self.frame,clicked=lambda:app.exit())
+        self.bt_x.setGeometry(QtCore.QRect(325, 2, 31, 31))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_x.setFont(font)
+        self.bt_x.setStyleSheet("background-color:black;\n"
+"color:red")
+        self.bt_x.setFlat(True)
+        self.bt_x.setObjectName("bt_x")
+        self.bt_mini = QtWidgets.QPushButton(self.frame,clicked=lambda:MainWindow.showMinimized())
+        self.bt_mini.setGeometry(QtCore.QRect(300, 0, 20, 31))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.bt_mini.setFont(font)
+        self.bt_mini.setStyleSheet("color:white")
+        self.bt_mini.setFlat(True)
+        self.bt_mini.setObjectName("bt_mini")
+        self.label_2 = QtWidgets.QLabel(self.frame)
+        self.label_2.setGeometry(QtCore.QRect(10, 0, 67, 31))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color:white")
+        self.label_2.setObjectName("label_2")
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow) 
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.bt_clear.setText(_translate("MainWindow", "c"))
+        self.bt_clear.setShortcut(_translate("MainWindow", "esc"))
+        self.bt_back.setText(_translate("MainWindow", "<<"))
+        self.bt_back.setShortcut(_translate("MainWindow", "backspace"))
+        self.bt_div.setText(_translate("MainWindow", "/"))
+        self.bt_div.setShortcut(_translate("MainWindow", "/"))
+        self.bt_mod.setText(_translate("MainWindow", "%"))
+        self.bt_mod.setShortcut(_translate("MainWindow", "%"))
+        self.bt_multi.setText(_translate("MainWindow", "*"))
+        self.bt_multi.setShortcut(_translate("MainWindow", "*"))
+        self.bt8.setText(_translate("MainWindow", "8"))
+        self.bt8.setShortcut(_translate("MainWindow", "8"))
+        self.bt9.setText(_translate("MainWindow", "9"))
+        self.bt9.setShortcut(_translate("MainWindow", "9"))
+        self.bt7.setText(_translate("MainWindow", "7"))
+        self.bt7.setShortcut(_translate("MainWindow", "7"))
+        self.bt_sub.setText(_translate("MainWindow", "-"))
+        self.bt_sub.setShortcut(_translate("MainWindow", "-"))
+        self.bt1.setText(_translate("MainWindow", "1"))
+        self.bt1.setShortcut(_translate("MainWindow", "1"))
+        self.bt5.setText(_translate("MainWindow", "5"))
+        self.bt5.setShortcut(_translate("MainWindow", "5"))
+        self.bt2.setText(_translate("MainWindow", "2"))
+        self.bt2.setShortcut(_translate("MainWindow", "2"))
+        self.bt_add.setText(_translate("MainWindow", "+"))
+        self.bt_add.setShortcut(_translate("MainWindow", "+"))
+        self.bt3.setText(_translate("MainWindow", "3"))
+        self.bt3.setShortcut(_translate("MainWindow", "3"))
+        self.bt6.setText(_translate("MainWindow", "6"))
+        self.bt6.setShortcut(_translate("MainWindow", "6"))
+        self.bt4.setText(_translate("MainWindow", "4"))
+        self.bt4.setShortcut(_translate("MainWindow", "4"))
+        self.bt_brac.setText(_translate("MainWindow", "()"))
+        self.bt_brac.setShortcut(_translate("MainWindow", "("))
+        self.bt_brac.setShortcut(_translate("MainWindow", ")"))
+        self.bt0.setText(_translate("MainWindow", "0"))
+        self.bt0.setShortcut(_translate("MainWindow", "0"))
+        self.bt_equal.setText(_translate("MainWindow", "="))
+        self.bt_equal.setShortcut(_translate("MainWindow", "Enter"))
+        self.bt_dot.setText(_translate("MainWindow", "."))
+        self.bt_dot.setShortcut(_translate("MainWindow", "."))
+        self.label.setText(_translate("MainWindow", "0"))
+        self.bt_x.setText(_translate("MainWindow", "X"))
+        self.bt_x.setShortcut(_translate("MainWindow", "x"))
+        self.bt_mini.setText(_translate("MainWindow", "-"))
+        self.label_2.setText(_translate("MainWindow", "Calculator"))
+
+    def pressed(self,press):
+        # Clear label and set 0
+        if press == "C":
+                self.label.setStyleSheet("color:white")
+                self.label.setText("0")
+        else:
+                # 0 is convert into what is press
+                text = self.label.text()
+                if text in ['0','/','*','%','+']:
+                        self.label.setText("")
+                # add press back 
+                self.label.setStyleSheet("color:white")
+                self.label.setText(f'{self.label.text()}{press}')
+
+                
+    def dot(self):
+        text = self.label.text()
+        if "." in text and text[-1] ==".":
+                pass
+        else:
+                self.label.setText(f'{text}.')
+
+    def remove(self):
+        text = self.label.text()
+        #remove digit by string slicing
+        text = text[:-1]
+        if text == "":
+                #if all digit remove set 0 on label 
+                self.label.setText("0") 
+        else:       
+                self.label.setText(text)
+
+    def bracket(self):
+        text = self.label.text()
+        #set opening ( if text==0 
+        if text == "0":
+                self.label.setText(f'(')
+        # also set opening bracket but diff on condition
+        elif text != "0"  and text[-1] in ['/','-','+','%']:
+                self.label.setText(f'{text}(')  
+        else:
+                self.label.setText(f'{text}*(')
+        if "(" in text and text[-1] != "(" and text[-2]=="(":
+                self.label.setText(f'{text})')
+
+    def result(self):
+        text = self.label.text()
+        if text =="0":
+                self.label.setStyleSheet("color:white")
+                self.label.setText("0")
+        else:
+                result = eval(text)
+                # if len(str(result))>10:
+                self.label.setText(str(result))
+                self.label.setStyleSheet("color:rgb(0,230,0)")
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
+# result = eval("33+33")
+# st = str(result)
+# print(type(st))
+# print(st)
+# if len(str(result))>10:
+#         print(str(result))
+# print("no")
